@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/index.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+        }
+
+        #hero {
+            position: relative;
+            min-height: 100vh;
+            /* border: 10px solid purple; */
+            overflow: hidden;
+            position: relative;
+            background-image: url(bg.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .road {
+            width: 100%;
+            height: 50vh;
+            position: absolute;
+            bottom: 0;
+            transform: perspective(100px) rotateX(45deg);  
+            overflow: hidden;
+        }
+
+        .line {
+            position: absolute;
+        }
+
+        .v .line {
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(0deg, #02DFAEFF, #02DFAE00);
+        }
+        .v .line:nth-child(1) {
+            left: 0;
+        }
+        .v .line:nth-child(2) {
+            left: 12.5%;
+        }
+        .v .line:nth-child(3) {
+            left: calc(12.5% * 2);
+        }
+        .v .line:nth-child(4) {
+            left: calc(12.5% * 3);
+        }
+        .v .line:nth-child(5) {
+            left: calc(12.5% * 4);
+        }
+        .v .line:nth-child(6) {
+            left: calc(12.5% * 5);
+        }
+        .v .line:nth-child(7) {
+            left: calc(12.5% * 6);
+        }
+        .v .line:nth-child(8) {
+            left: calc(12.5% * 7);
+        }
+        .v .line:nth-child(9) {
+            left: auto;
+            right: 0;
+        }
+
+        .h .line {
+            left: 0;
+            right: 0;
+            top: -10%;
+            border-bottom: 3px solid #02DFAE;
+            animation-name: moveup;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in;
+        }
+        .h .line:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .h .line:nth-child(2) {
+            animation-delay: 1s;
+        }
+        .h .line:nth-child(3) {
+            animation-delay: 2s;
+        }
+        .h .line:nth-child(4) {
+            animation-delay: 3s;
+        }
+        .h .line:nth-child(5) {
+            animation-delay: 4s;
+        }
+        .h .line:nth-child(6) {
+            animation-delay: 5s;
+        }
+
+        @keyframes moveup {
+            from {
+                top: -10%;
+                bottom: 110%;
+                opacity: 0;
+            }
+
+            to {
+                top: 110%;
+                bottom: -10%;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="hero">
+        <div class="road">
+            <div class="v">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="h">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
